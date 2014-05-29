@@ -14,6 +14,10 @@ describe CommandController do
     it 'will split input into command and argument' do
       expect(@controller.split_input('go east')).to eq ['go', 'east']
     end
+
+    it 'will split multi word arguments correctly' do
+      expect(@controller.split_input('go super east')).to eq ['go', 'super east']
+    end
   end
 
   describe 'commands' do
@@ -31,5 +35,11 @@ describe CommandController do
       @controller.game_controller.should_receive(:go).with(:east)
       @controller.route_command('go east')
     end
+
+    it 'should route the fight command' do
+      @controller.game_controller.should_receive(:fight).with('your inner critic')
+      @controller.route_command('fight your inner critic')
+    end
+
   end
 end

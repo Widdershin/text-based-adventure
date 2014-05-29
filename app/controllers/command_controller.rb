@@ -14,10 +14,15 @@ class CommandController
         game_controller.loot
       when 'go'
         game_controller.go(argument.to_sym)
+      when 'fight'
+        game_controller.fight(argument)
     end
   end
 
   def split_input(command)
-    command.split(' ')
+    (split_command, *arguments) = command.split(' ')
+    argument = arguments.join(' ')
+
+    [split_command, argument]
   end
 end
