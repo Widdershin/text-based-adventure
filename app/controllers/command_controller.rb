@@ -4,4 +4,8 @@ class CommandController
   def initialize
     @game_controller = GameController.new
   end
+
+  def route_command(command)
+    @game_controller.look
+  end
 end
