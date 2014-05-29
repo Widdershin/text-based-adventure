@@ -1,0 +1,3 @@
+
+class Player < Character
+end
