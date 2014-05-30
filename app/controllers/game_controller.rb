@@ -8,15 +8,10 @@ class GameController
 
     # TODO: Make rooms not hardcoded
 
-    second_room = Room.new(description: "This room is much more pleasant than the last one. Until you saw the Juggalo in the corner, that is.", gems:15)
-    second_room.set_enemy(Juggalo.new)
-
-    @current_room = Room.new(description: 'You are in a test room. The walls are a faded white, and there is an exit to the east. Cry.', gems: 9)
+    @current_room = Room.new(description: 'You are in a test room. The walls are a faded white, and there is no exit you can see. Cry.', gems: 9,  directions: {north:nil,south:nil})
     @current_room.set_enemy(Goblin.new)
 
     @current_room.directions = {east: second_room}
-
-    second_room.directions = {west: @current_room}
 
     @room_to_move_to = current_room
 
