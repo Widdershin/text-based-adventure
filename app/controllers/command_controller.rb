@@ -15,7 +15,7 @@ class CommandController
       when 'go'
         game_controller.go(argument.to_sym)
       when 'fight'
-        game_controller.fight(argument)
+        game_controller.fight
     end
   end
 

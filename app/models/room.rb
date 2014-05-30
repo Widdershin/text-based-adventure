@@ -1,17 +1,19 @@
 
 class Room
-  attr_reader :description, :enemies, :gems
+  attr_reader :description, :gems
+  attr_accessor :enemy
   def initialize(args)
     @description = args.fetch(:description)
     @gems = args.fetch(:gems, 0)
-    @enemies = []
+    @enemy = nil
   end
 
-  def add_enemy(enemy)
-    enemies << enemy
+  def set_enemy(enemy)
+    self.enemy = enemy
   end
 
   def loot
     @gems = 0
   end
+
 end

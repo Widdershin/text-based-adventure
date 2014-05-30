@@ -20,4 +20,12 @@ describe GameController do
     expect(@controller.player.gems).to eq(player_gems + room_gems)
     expect(@controller.current_room.gems).to eq 0
   end
+
+  it 'lets the player fight the enemy' do
+    enemy_health = @controller.enemy.health
+
+    @controller.fight
+
+    expect(@controller.enemy.health).to eq (enemy_health - @controller.player.strength)
+  end
 end

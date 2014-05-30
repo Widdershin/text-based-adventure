@@ -8,10 +8,10 @@ describe Room do
     expect(@room.description).to eq "This is a test room!"
   end
 
-  it 'can add enemies' do
+  it 'can set an enemy' do
     enemy = Enemy.new
-    @room.add_enemy(enemy)
-    expect(@room.enemies).to include(enemy)
+    @room.set_enemy(enemy)
+    expect(@room.enemy).to be(enemy)
   end
 
   it 'has some gems yo' do
