@@ -4,7 +4,7 @@ class GameController
 
   def initialize
     @player = Player.new
-    @current_room = Room.new(description: 'test room', gems: 9)
+    @current_room = Room.new(description: 'test room', gems: 9,  directions: {north:nil,south:nil})
     @current_room.set_enemy(Enemy.new)
   end
 
