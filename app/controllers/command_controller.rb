@@ -25,4 +25,8 @@ class CommandController
 
     [split_command, argument]
   end
+
+  def get_commands
+    @game_controller.available_commands
+  end
 end
