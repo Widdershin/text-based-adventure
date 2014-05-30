@@ -33,8 +33,8 @@ describe CommandController do
     end
 
     it 'should route the fight command' do
-      @controller.game_controller.should_receive(:fight).with('your inner critic')
-      @controller.route_command('fight your inner critic')
+      @controller.game_controller.should_receive(:fight)
+      @controller.route_command('fight')
     end
   end
 
