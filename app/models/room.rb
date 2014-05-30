@@ -10,4 +10,8 @@ class Room
   def add_enemy(enemy)
     enemies << enemy
   end
+
+  def loot
+    @gems = 0
+  end
 end
