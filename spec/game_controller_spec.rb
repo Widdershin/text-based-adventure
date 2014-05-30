@@ -8,4 +8,8 @@ describe GameController do
   it 'should have a player' do
     expect(@controller.player).to be_a Player
   end
+
+  it 'should have a current room' do
+    expect(@controller.current_room).to be_a Room
+  end
 end
