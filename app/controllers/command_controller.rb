@@ -20,13 +20,11 @@ class CommandController
   end
 
   def save_score(player)
-    record = Record.new(
+    Record.save_score(
       player_name: 'Test player',
       treasure_collected: player.gems,
       enemies_killed: player.enemies_killed
     )
-    p record
-    record.save
   end
 
   def route_command(command)
