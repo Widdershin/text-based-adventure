@@ -3,7 +3,9 @@ require 'pry'
 class Room
   attr_reader :description, :gems
   attr_accessor :enemy, :directions
+
   POSSIBLE_DIRECTIONS = [:north,:south,:east,:west,:up,:down]
+
   def initialize(args)
     @description = args.fetch(:description)
     @gems = args.fetch(:gems, 0)

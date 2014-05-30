@@ -16,6 +16,17 @@ class CommandController
       @game_controller.end_of_turn
     end
     puts "You are dead; the game is over!"
+    save_score(@game_controller.player)
+  end
+
+  def save_score(player)
+    record = Record.new(
+      player_name: 'Test player',
+      treasure_collected: player.gems,
+      enemies_killed: player.enemies_killed
+    )
+    p record
+    record.save
   end
 
   def route_command(command)
