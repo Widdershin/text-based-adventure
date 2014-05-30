@@ -1,11 +1,16 @@
 
 class GameController
-  attr_reader :player, :current_room
+  attr_reader :player, :current_room, :view
 
   def initialize
     @player = Player.new
-    @current_room = Room.new(description: 'test room', gems: 9)
-    @current_room.set_enemy(Enemy.new)
+    @current_room = Room.new(description: 'You are in a test room. The walls are a faded white, and there is no exit you can see. Cry.', gems: 9)
+    @current_room.set_enemy(Goblin.new)
+    @view = ConsoleView.new
+  end
+
+  def look
+    view.display_room_info(current_room)
   end
 
   def loot
@@ -19,5 +24,9 @@ class GameController
 
   def fight
     @player.fight(enemy)
+  end
+
+  def display_player_info
+    view.display_player_info(player)
   end
 end

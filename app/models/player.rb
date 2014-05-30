@@ -10,8 +10,4 @@ class Player < Character
   def acquire_gems(number)
     self.gems += number
   end
-
-  def fight(enemy)
-    enemy.damage_for(strength)
-  end
 end
