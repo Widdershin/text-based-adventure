@@ -14,4 +14,7 @@ describe Room do
     expect(@room.enemies).to include(enemy)
   end
 
+  it 'has some gems yo' do
+    expect(@room.gems).to be 15
+  end
 end
