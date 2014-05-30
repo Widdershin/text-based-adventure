@@ -28,4 +28,12 @@ describe GameController do
 
     expect(@controller.enemy.health).to eq (enemy_health - @controller.player.strength)
   end
+
+  it 'lets the enemy fight the player' do
+    player_health = @controller.player.health
+
+    @controller.attack_player
+
+    expect(@controller.player.health).to eq (player_health - @controller.enemy.strength)
+  end
 end
