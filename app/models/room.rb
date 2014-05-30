@@ -19,8 +19,14 @@ class Room
     @gems = 0
   end
 
+
   def list_directions
     @directions.keys[0]
+  end
+
+
+  def kill_enemy
+    self.enemy = nil
   end
 
 end

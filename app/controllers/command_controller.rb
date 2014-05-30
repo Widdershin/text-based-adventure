@@ -5,6 +5,19 @@ class CommandController
     @game_controller = GameController.new
   end
 
+  def run
+    puts "Welcome to generic text adventure!"
+    @game_controller.look
+    while @game_controller.player.alive?
+      @game_controller.display_player_info
+      print '> '
+      input = gets.chomp
+      route_command input
+      @game_controller.end_of_turn
+    end
+    puts "You are dead; the game is over!"
+  end
+
   def route_command(command)
     command, argument = split_input(command)
     case command
