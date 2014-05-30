@@ -9,4 +9,5 @@ class CreateRecords < ActiveRecord::Migration
       t.timestamps
     end
   end
+
 end
