@@ -1,7 +1,7 @@
 
 describe Room do
   before do
-    @room = Room.new(description: "This is a test room!", gems: 15)
+    @room = Room.new(description: "This is a test room!", gems: 15, directions: {north:nil,south:nil})
   end
 
   it 'should have a description' do
@@ -17,4 +17,9 @@ describe Room do
   it 'has some gems yo' do
     expect(@room.gems).to be 15
   end
+
+  it 'has list of valid directions' do
+    expect([:north,:south,:east,:west,:up,:down]).to include(@room.list_directions)
+  end
+
 end
