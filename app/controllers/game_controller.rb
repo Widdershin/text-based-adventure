@@ -11,8 +11,6 @@ class GameController
     @current_room = Room.new(description: 'You are in a test room. The walls are a faded white, and there is no exit you can see. Cry.', gems: 9,  directions: {north:nil,south:nil})
     @current_room.set_enemy(Goblin.new)
 
-    @current_room.directions = {east: second_room}
-
     @room_to_move_to = current_room
 
     @view = ConsoleView.new
