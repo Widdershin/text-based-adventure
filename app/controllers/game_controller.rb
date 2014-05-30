@@ -24,9 +24,30 @@ class GameController
 
   def fight
     @player.fight(enemy)
+    view.fight_enemy(player, enemy)
   end
 
   def display_player_info
     view.display_player_info(player)
+  end
+
+  def attack_player
+    enemy.fight(player)
+    view.attacked_by_enemy(enemy)
+  end
+
+  def end_of_turn
+    if !enemy.nil?
+      if enemy.dead?
+        kill_enemy
+      else
+        attack_player
+      end
+    end
+  end
+
+  def kill_enemy
+    view.enemy_dead(enemy)
+    current_room.kill_enemy
   end
 end

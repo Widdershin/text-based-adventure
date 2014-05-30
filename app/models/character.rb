@@ -1,6 +1,6 @@
 
 class Character
-  attr_accessor :gems, :health
+  attr_accessor :gems, :health, :strength
   def initialize
     @gems = 0
   end

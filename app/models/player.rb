@@ -1,6 +1,5 @@
 
 class Player < Character
-  attr_reader :strength
   def initialize
     super
     @health = 100
